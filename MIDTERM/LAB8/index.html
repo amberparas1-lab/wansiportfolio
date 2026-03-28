@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stylesheet Switcher (Internal)</title>
+  <style id="style0">
+    body { font-family: Arial; }
+  </style>
+
+  <style id="style1" disabled>
+    body { background: #222; color: white; }
+    .container { display: flex; }
+    .content { flex: 3; }
+    .sidebar { flex: 1; background: #444; padding: 10px; }
+  </style>
+
+  <style id="style2" disabled>
+    body { background: lightblue; text-align: center; }
+    .container { width: 60%; margin: auto; }
+    .sidebar { border: 2px solid blue; padding: 10px; }
+  </style>
+
+  <style id="style3" disabled>
+    body { display: flex; }
+    ul { width: 200px; }
+    .container { flex: 1; }
+    .sidebar { background: pink; padding: 10px; }
+  </style>
+
+  <style id="style4" disabled>
+    body { background: black; color: lime; font-family: monospace; }
+    .sidebar { border: 1px dashed lime; padding: 10px; }
+  </style>
+
+</head>
+
+<body>
+
+<h1>Welcome to My Homepage</h1>
+<p>Use the menu to select different Stylesheets</p>
+
+<ul>
+  <li onclick="setStyle('style1')">Stylesheet 1</li>
+  <li onclick="setStyle('style2')">Stylesheet 2</li>
+  <li onclick="setStyle('style3')">Stylesheet 3</li>
+  <li onclick="setStyle('style4')">Stylesheet 4</li>
+  <li onclick="setStyle('style0')">No Stylesheet</li>
+</ul>
+
+<div class="container">
+  <div class="content">
+    <h2>Same Page Different Style</h2>
+    <p>This is a demonstration of different layouts.</p>
+  </div>
+
+  <div class="sidebar">
+    <h3>Side-Bar</h3>
+    <p>Lorem ipsum dolor sit amet...</p>
+  </div>
+</div>
+
+<script>
+function setStyle(styleId) {
+  let styles = ["style0","style1","style2","style3","style4"];
+
+  styles.forEach(id => {
+    document.getElementById(id).disabled = true;
+  });
+
+  document.getElementById(styleId).disabled = false;
+}
+</script>
+
+</body>
+</html>
