@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Task part 1</title>
+<link rel="stylesheet" href="style.css">
+<style>             
+body {
+  font-family: Arial;
+}
+
+.box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item {
+  background: lightgray;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+.a .item:first-child {
+  width: 200px;
+  background: lightblue;
+
+}
+.a .item:last-child {
+  width: 75px;
+    background: lightcoral;
+}
+
+.b .item {
+  width: 50px;
+  background: lightcoral;
+}
+.b .grow {
+  flex: 1; 
+  background: lightblue
+}
+
+.c {
+  justify-content: space-between;
+}
+.c .item{
+    background: lightcoral;
+}
+
+.d {
+  height: 50px;
+  border: 2px solid gray;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.d .item {
+  background: lightcoral;
+}
+</style>
+</head>
+<body>
+
+<h3>12a</h3>
+<div class="box a">
+  <div class="item">200px</div>
+  <div class="item">75px</div>
+</div>
+
+<h3>12b</h3>
+<div class="box b">
+  <div class="item">item1</div>
+  <div class="item grow">item2</div>
+  <div class="item">item3</div>
+</div>
+
+<h3>12c</h3>
+<div class="box c">
+  <div class="item">item1</div>
+  <div class="item">item2</div>
+  <div class="item">item3</div>
+  <div class="item">item4</div>
+</div>
+
+<h3>12d</h3>
+<div class="box d">
+  <div class="item">item1</div>
+  <div class="item">item2</div>
+</div>
+
+<style>
+    .container {
+  border: 2px solid black;
+}
+
+header, footer {
+  background: beige;
+  padding: 10px;
+  height: 200px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+}
+
+.left, .right {
+  background: green;
+  border: 6px solid yellow;
+  padding: 20px;
+  height: 200px;
+}
+
+@media (min-width: 800px) {
+  .left {
+    width: 30%;
+  }
+  .right {
+    width: 70%;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <header>This is a Header</header>
+
+  <div class="content">
+    <div class="left">section left nav</div>
+    <div class="right">section right nav</div>
+  </div>
+
+  <footer>This is a Footer</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
